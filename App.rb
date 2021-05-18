@@ -1,3 +1,4 @@
+require 'colorize'
 require_relative "Imperial"
 require_relative "Metric"
 
@@ -34,7 +35,7 @@ class App
 			puts "Thank you for using the converter!!"
 			break
 		else
-			puts "Please check your data..."
+			puts "Please check your data...".colorize(:red)
 		end
 	end
 end
