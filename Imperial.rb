@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Imperial
 
 	def msg
@@ -30,7 +32,9 @@ class Imperial
 			when "oz"
 				oz_to_gr(data)
 			when "ft"
-				foot_to_cm(data)				
+				foot_to_cm(data)
+			else
+				puts "Please check your data ..."		
 		end
 	end
 	end
@@ -38,27 +42,32 @@ class Imperial
 	# convertors methods
 	def farenheit_to_celsius(data)
 		result = (data.to_i - 32) / 1.8
-		puts result.to_s + " C"
+		display_result(result.round(2).to_s + " C")
 	end
 
 	def inch_to_cm(data)
 		result = data.to_i * 2.5
-		puts result.to_s + " cm"
+		display_result(result.to_s + " cm")
 	end
 
 	def foot_to_cm(data)
 		result = data.to_i * 30.48
-		puts result.to_s + " cm"
+		display_result(result.to_s + " cm")
 	end
 
 	def  ml_to_km(data)
 		result = data.to_i / 1.6
-		puts result.to_s + " km"
+		display_result(result.to_s + " km")
 	end
 
 	def oz_to_gr(data)
 		result = data.to_i / 0.035274
-		puts result.round(2).to_s + ' gr'
+		display_result(result.round(2).to_s + ' gr')
 	end
 
+	def display_result(result)
+		puts "=========================================================="
+		puts "Result is: "
+		puts result.colorize(:red)
+	end
 end

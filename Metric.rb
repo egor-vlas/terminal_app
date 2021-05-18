@@ -1,3 +1,6 @@
+require 'colorize'
+
+
 class Metric < Imperial
 	def msg
 		puts "=========================================================="
@@ -15,7 +18,9 @@ class Metric < Imperial
 
 	def converter
 		arr_of_scale = ["c", "cm", "m", "km", "gr"]
+		
 		print ">"
+		
 		str = gets.chomp
 		data, scale = str.split(" ") 	
 		if arr_of_scale.include?(scale)
@@ -29,35 +34,39 @@ class Metric < Imperial
 				when "km"
 					km_to_m(data)
 				when "gr"
-					gr_to_oz(data)				
+					gr_to_oz(data)
+				else
+					puts "Please check your input..."				
 			end
 		end
 	end
 
 	def celsius_to_farenheit(data)
 		result = (data.to_i * 9/5) + 32
-		puts result.to_s + " F"
+		display_result(result.to_s + " F")	
 	end
 
 	def cm_to_inch(data)
 		result = data.to_i / 2.5
-		puts result.to_s + " inch"
-	end
+		display_result(result.to_s + " inch")
+end
 
 	def m_to_foot(data)
 		result = data.to_i * 3.28
-		puts result.to_s + " ft"
+		display_result(result.round(2).to_s + " ft")
+	
 	end
 
 	def  km_to_m(data)
-		result = data.to_i * 1.6
-		puts result.round(2).to_s + " ml"
+		result = data.to_i * 1.6 
+		display_result(result.round(2).to_s + " ml")
 	end
 
 	def gr_to_oz(data)
 		result = data.to_i * 0.035274
-		puts result.round(2).to_s + ' oz'
+		display_result(result.round(2).to_s + ' oz')
 	end
+
 
 
 
