@@ -14,24 +14,24 @@ class Metric < Imperial
 
 
 	def converter
-	arr_of_scale = ["c", "cm", "m", "km", "gr"]
-	print ">"
-	str = gets.chomp
-	data, scale = str.split(" ") 	
-	if arr_of_scale.include?(scale)
-		case scale
-			when 'c'
-				celsius_to_farenheit(data)
-			when "cm"
-				cm_to_inch(data)
-			when "m"
-				m_to_foot(data)
-			when "km"
-				km_to_m(data)
-			when "gr"
-				gr_to_oz(data)				
+		arr_of_scale = ["c", "cm", "m", "km", "gr"]
+		print ">"
+		str = gets.chomp
+		data, scale = str.split(" ") 	
+		if arr_of_scale.include?(scale)
+			case scale
+				when 'c'
+					celsius_to_farenheit(data)
+				when "cm"
+					cm_to_inch(data)
+				when "m"
+					m_to_foot(data)
+				when "km"
+					km_to_m(data)
+				when "gr"
+					gr_to_oz(data)				
+			end
 		end
-	end
 	end
 
 	def celsius_to_farenheit(data)

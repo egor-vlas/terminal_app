@@ -34,7 +34,7 @@ class App
 			puts "Thank you for using the converter!!"
 			break
 		else
-			puts "please check your data..."
+			puts "Please check your data..."
 		end
 	end
 end
