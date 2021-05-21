@@ -2,6 +2,7 @@ require 'colorize'
 
 class Imperial
 
+	# convert message
 	def msg
 		puts "=========================================================="
 		puts "Please 	enter data you would like to convert following exact format:"

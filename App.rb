@@ -12,6 +12,7 @@ class App
 	end 
 
 	def hello
+		# Wecome message
 		while @answer != 'q' do
 			puts "=========================================================="
 			puts "Please select measurment system you would like to convert."

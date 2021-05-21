@@ -1,6 +1,6 @@
 ## Provide a link to your source control repository
 
-
+[](https://github.com/egor-vlas/terminal_app)
 
 
 
@@ -16,5 +16,10 @@ A lot of people get confused with converting Fahrenheits into Celsius or kilomet
 
 ### **identify** the target audience
 
-The target audience is people who need to convert data. It could be used by very large audience. The main requirement is to have a laptop.
+The target audience is people who need to convert data from one metric system to another.
 
+ It could be used by very large audience. The main requirement is to have a laptop.
+
+### **explain** how a member of the target audience will use it
+
+Users will install it on their computer and then follow instructions on a screen.
