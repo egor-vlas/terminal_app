@@ -1,9 +1,6 @@
 require 'colorize'
-require 'tty-link'
-require 'tty-font'
 require_relative "Imperial"
 require_relative "Metric"
-require_relative "Info"
 
 
 class App
@@ -11,8 +8,6 @@ class App
 	def initialize
 		@imp = Imperial.new
 		@metr = Metric.new
-		@info = Info.new
-		@font = TTY::Font.new(:standard)
 		@answer = ''
 	end 
 
@@ -21,18 +16,14 @@ class App
 		while @answer != 'q' do
 			puts "=========================================================="
 			puts "Please select measurment system you would like to convert."
-			puts "Enter 1 for imperial measuring system"
-			puts "Enter 2 for metric measuring system"
-			puts "Enter 3 for reading formulas used in app"
-			puts TTY::Link.link_to("Link to my website", "https://vlasenkoiegor.com")
+			puts "Enter 1 for imperial metric system"
+			puts "Enter 2 for metric system"
 			puts "Enter q for exit "
 			puts "=========================================================="
 			print ">"
 		
 		@answer = gets.chomp.downcase
 		
-		raise StandardError, "You should provide data to convert" if @answer.empty?	
-
 		if @answer == "1"
 			@imp.msg
 			@imp.converter
@@ -41,14 +32,8 @@ class App
 			@metr.msg
 			@metr.converter
 
-		elsif @answer == "3"
-			@info.explanation
-
 		elsif @answer == "q"
-			puts @font.write("Thank you ")
-			puts @font.write("For Using ")
-			puts @font.write("converter ")
-			
+			puts "Thank you for using the converter!!"
 			break
 		else
 			puts "Please check your data...".colorize(:red)

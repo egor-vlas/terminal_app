@@ -22,8 +22,7 @@ class Metric < Imperial
 		print ">"
 		
 		str = gets.chomp
-		raise ArgumentError, "Data can not be empty" if str.empty?
-		data, scale = str.split(" ")		
+		data, scale = str.split(" ") 	
 		if arr_of_scale.include?(scale)
 			case scale
 				when 'c'

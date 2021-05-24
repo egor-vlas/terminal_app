@@ -44,7 +44,7 @@ class Imperial
 
 	# convertors methods
 	def farenheit_to_celsius(data)
-		result = (data.to_i - 32) / 1.8
+		result = (data.to_i - 32) / 1.8		
 		display_result(result.round(2).to_s + " C")
 	end
 
@@ -71,8 +71,9 @@ class Imperial
 	def display_result(result)
 		box = TTY::Box.success(result.colorize(:red))
 		print box
-		# puts "=========================================================="
+		# puts "******************************************"
 		# puts "Result is: "
 		# puts result.colorize(:red)
+		# puts "******************************************"
 	end
 end
