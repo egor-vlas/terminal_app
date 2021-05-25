@@ -45,34 +45,50 @@ class Imperial
 	# convertors methods
 	def farenheit_to_celsius(data)
 		result = (data.to_i - 32) / 1.8
+		save_data(result)	
 		display_result(result.round(2).to_s + " C")
+		
 	end
 
 	def inch_to_cm(data)
 		result = data.to_i * 2.5
+		save_data(result)
 		display_result(result.to_s + " cm")
 	end
 
 	def foot_to_cm(data)
 		result = data.to_i * 30.48
+		save_data(result)
 		display_result(result.to_s + " cm")
 	end
 
 	def  ml_to_km(data)
 		result = data.to_i / 1.6
+		save_data(result)
 		display_result(result.to_s + " km")
 	end
 
 	def oz_to_gr(data)
 		result = data.to_i / 0.035274
+		save_data(result)
 		display_result(result.round(2).to_s + ' gr')
 	end
 
 	def display_result(result)
 		box = TTY::Box.success(result.colorize(:red))
-		print box
-		# puts "=========================================================="
-		# puts "Result is: "
-		# puts result.colorize(:red)
+		print box		
 	end
+
+	def save_data(result)
+		puts 'Would you like to save your data in a file?'
+		puts 'If you do enter Y otherwise enter N'
+		print ">"
+		answ = gets.chomp.downcase
+		answ == "y" ? (saving(result)) : (puts "No")
+	end
+
+	def saving(result)
+		File.open("Data.txt", 'w') { |file| file.write(result) }
+		puts "Your data has been saved!!".colorize(:green)
+	end	
 end

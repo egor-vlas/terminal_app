@@ -23,9 +23,10 @@ class App
 			puts "Please select measurment system you would like to convert."
 			puts "Enter 1 for imperial measuring system"
 			puts "Enter 2 for metric measuring system"
-			puts "Enter 3 for reading formulas used in app"
-			puts TTY::Link.link_to("Link to my website", "https://vlasenkoiegor.com")
+			puts "Enter 3 for retriving information from a file"		
 			puts "Enter q for exit "
+			puts ""
+			puts TTY::Link.link_to("Link to my website", "https://vlasenkoiegor.com")
 			puts "=========================================================="
 			print ">"
 		

@@ -44,27 +44,32 @@ class Metric < Imperial
 
 	def celsius_to_farenheit(data)
 		result = (data.to_i * 9/5) + 32
+		save_data(result)
 		display_result(result.to_s + " F")	
 	end
 
 	def cm_to_inch(data)
 		result = data.to_i / 2.5
+		save_data(result)
 		display_result(result.to_s + " inch")
 end
 
 	def m_to_foot(data)
 		result = data.to_i * 3.28
+		save_data(result)
 		display_result(result.round(2).to_s + " ft")
 	
 	end
 
 	def  km_to_m(data)
-		result = data.to_i * 1.6 
+		result = data.to_i * 1.6
+		save_data(result)
 		display_result(result.round(2).to_s + " ml")
 	end
 
 	def gr_to_oz(data)
 		result = data.to_i * 0.035274
+		save_data(result)
 		display_result(result.round(2).to_s + ' oz')
 	end
 
