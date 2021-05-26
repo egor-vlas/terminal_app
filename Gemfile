@@ -8,3 +8,4 @@ gem 'rspec', '~> 3.10'
 gem 'tty-link'
 gem "tty-box"
 gem 'tty-font'
+gem "tty-prompt"

@@ -31,8 +31,17 @@ GEM
     tty-cursor (0.7.1)
     tty-font (0.5.0)
     tty-link (0.1.1)
+    tty-prompt (0.23.1)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.9.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
+    tty-screen (0.8.1)
     unicode-display_width (2.0.0)
     unicode_utils (1.4.0)
+    wisper (2.0.1)
 
 PLATFORMS
   x86_64-linux
@@ -43,6 +52,7 @@ DEPENDENCIES
   tty-box
   tty-font
   tty-link
+  tty-prompt
 
 RUBY VERSION
    ruby 3.0.0p0
