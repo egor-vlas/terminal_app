@@ -1,5 +1,6 @@
 require 'colorize'
 require 'tty-box'
+require "tty-prompt"
 
 class Imperial
 
